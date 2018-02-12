@@ -1,5 +1,16 @@
 # TCP-Starvation
 
+**Update:** From comments throughout different communities, I've seen links to different articles describing the same issue as I do here. 
+I understand this vulnerability that has existed for quite some time already (10y+), and by no means trying to take credit for them. 
+Perhaps I used wrong search terms when looking for related articles, or just that they was located at page 42 on google. Either way, I still hope you enjoy the read and perhaps learn something useful.
+
+I've also seen a lot of people mistake this for a SYN flood attack. This attack relies on a full connection, not half open. So SYN cookies won't help you.
+
+Since this is a already know vulnerability with existing attacks/pocs, I've decided to upload a trimmed down version of the kittenzlauncher.py (ddos/waf evasion, proxy jumping, c2 mode - is removed).
+
+<br> <br>
+**Original:**
+
 Some time ago, I found a design flaw/vulnerability which affects most TCP services and allows for a new variant of denial of service. 
 This attack can multiply the efficiency of a traditional DoS by a large amount, depending on what the target and purpose may be.
 
