@@ -40,7 +40,7 @@ optional.add_argument('-payload', help='Set payload as hex-string')
 
 
 
-print "\nKittenz launcher.\n"
+print("\nKittenz launcher.\n")
 args = parser.parse_args()
 connected = 0
 dropped = 0
@@ -65,13 +65,13 @@ try:
     else:
         payload = ''
 except:
-    print 'Use hex string format as payload.'
+    print('Use hex string format as payload.')
     sys.exit()
 
 
 # Check if script is running as root
 if geteuid() != 0:
-    print "Run %s as root." % sys.argv[0]
+    print("Run %s as root." % sys.argv[0])
     sys.exit()
 
 
@@ -139,7 +139,7 @@ if __name__ == '__main__':
             # when ctrl+c is pressed, restore IP tables.
             system('iptables -D OUTPUT -d %s -p tcp --dport %d --tcp-flags FIN FIN -j DROP' %( target_ip, port ))
             system('iptables -D OUTPUT -d %s -p tcp --dport %d --tcp-flags RST RST -j DROP' %( target_ip, port ))
-            print ""
+            print("")
             break
         else:
             sleep(0.1)
