@@ -81,7 +81,7 @@ def signal_handler(signal, frame):
     global stop
     stop = True
 signal.signal(signal.SIGINT, signal_handler)
-
+system('iptables -X')
 
 # String generator for Cache bypassing on load balancers (Random letters in lenght 3 to 8)
 def string_generator(size=random.randint(3, 8), chars=string.ascii_uppercase + string.ascii_lowercase):
